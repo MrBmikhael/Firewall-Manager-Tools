@@ -47,7 +47,9 @@ namespace FirewallMan
             if (packet == null)
                 return;
 
-            PrintHex(packet.Header);
+            var eth = ((PacketDotNet.EthernetPacket)packet);
+            richTextBox1.Text += (eth.ToString() + "\n");
+            //PrintHex(packet.Header);
         }
 
         private void PrintHex(byte[] hexArr)
