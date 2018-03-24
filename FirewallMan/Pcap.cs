@@ -48,8 +48,15 @@ namespace FirewallMan
                 return;
 
             var eth = ((PacketDotNet.EthernetPacket)packet);
-            richTextBox1.Text += (eth.ToString() + "\n");
+            richTextBox1.Text += (eth.ToString() + "\n\n\n");
+            ParseEthInfo(eth.ToString());
             //PrintHex(packet.Header);
+        }
+
+        private Dictionary<string, string> ParseEthInfo(string eth)
+        {
+            Console.Out.WriteLine(eth.Split()[1]);
+            return new Dictionary<string, string>();
         }
 
         private void PrintHex(byte[] hexArr)
