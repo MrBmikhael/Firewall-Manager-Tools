@@ -117,11 +117,11 @@ namespace FirewallMan
                 if (str.Contains("Protocol"))
                     Data["Protocol"] = str.Split('=')[1].ToString().TrimEnd(',');
                 if (str.Contains("TimeToLive"))
-                    Data["TimeToLive"] = str.Split('=')[1].ToString().Substring(0,3).TrimEnd(']');
+                    Data["TimeToLive"] = str.Split('=')[1].ToString().Substring(0,3).Replace("]", "").Replace("[", "");
                 if (str.Contains("SourcePort"))
                     Data["SourcePort"] = str.Split('=')[1].ToString().TrimEnd(',');
                 if (str.Contains("DestinationPort"))
-                    Data["DestinationPort"] = str.Split('=')[1].ToString().TrimEnd(',');
+                    Data["DestinationPort"] = str.Split('=')[1].ToString().Replace("]", "").Replace(",", "");
             }
 
             //foreach (string str in Data.Keys)
