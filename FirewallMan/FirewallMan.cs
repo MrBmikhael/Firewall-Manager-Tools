@@ -14,10 +14,10 @@ using System.IO;
 
 namespace FirewallMan
 {
-    public partial class Form1 : Form
+    public partial class FirewallMan : Form
     {
         public Firewall FW;
-        public Form1()
+        public FirewallMan()
         {
             InitializeComponent();
 

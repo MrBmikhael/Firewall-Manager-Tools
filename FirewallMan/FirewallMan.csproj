@@ -93,11 +93,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FirewallMan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FirewallMan.Designer.cs">
+      <DependentUpon>FirewallMan.cs</DependentUpon>
     </Compile>
     <Compile Include="NetworkMonitor.cs">
       <SubType>Form</SubType>
@@ -113,8 +113,8 @@
     <Compile Include="Pcap.Designer.cs">
       <DependentUpon>Pcap.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FirewallMan.resx">
+      <DependentUpon>FirewallMan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NetworkMonitor.resx">
       <DependentUpon>NetworkMonitor.cs</DependentUpon>

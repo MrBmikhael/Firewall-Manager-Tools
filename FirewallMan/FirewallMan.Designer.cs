@@ -1,6 +1,6 @@
 ﻿namespace FirewallMan
 {
-    partial class Form1
+    partial class FirewallMan
     {
         /// <summary>
         /// Required designer variable.
@@ -328,7 +328,7 @@
             this.packetCaptureToolStripMenuItem.Text = "Packet Capture";
             this.packetCaptureToolStripMenuItem.Click += new System.EventHandler(this.packetCaptureToolStripMenuItem_Click);
             // 
-            // Form1
+            // FirewallMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,8 +338,8 @@
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Firewall Man";
+            this.Name = "FirewallMan";
+            this.Text = "Firewall Manager";
             this.listViewContextMenu.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
