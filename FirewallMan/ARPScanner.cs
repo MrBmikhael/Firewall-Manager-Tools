@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpPcap;
 using SharpPcap.LibPcap;
-
+using System.Net;
+using System.Net.NetworkInformation;
+using SharpPcap.WinPcap;
 
 namespace FirewallMan
 {
@@ -20,10 +22,8 @@ namespace FirewallMan
         public ARPScanner()
         {
             InitializeComponent();
-            CheckForIllegalCrossThreadCalls = false;
 
             var devices = CaptureDeviceList.Instance;
-
             comboBox1.Items.Clear();
             foreach (var dev in devices)
                 comboBox1.Items.Add(dev.Description);
@@ -33,7 +33,19 @@ namespace FirewallMan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            WinPcapDevice PcapDevice = WinPcapDeviceList.Instance[comboBox1.SelectedIndex];
+            ARP req = new ARP((LibPcapLiveDevice)CaptureDeviceList.Instance[comboBox1.SelectedIndex]);
 
+            Console.Out.WriteLine(PcapDevice.Addresses[1]);
+
+            req.Timeout = new System.TimeSpan(1200000);
+
+            IPAddress target = null;
+            IPAddress.TryParse("192.168.1.1", out target);
+
+            var resolvedMacAddress = req.Resolve(target);
+
+            Console.Out.WriteLine(resolvedMacAddress.ToString());
         }
     }
 }
