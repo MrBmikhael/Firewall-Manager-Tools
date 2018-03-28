@@ -317,8 +317,8 @@
             // networkMonitorToolStripMenuItem
             // 
             this.networkMonitorToolStripMenuItem.Name = "networkMonitorToolStripMenuItem";
-            this.networkMonitorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.networkMonitorToolStripMenuItem.Text = "Network Monitor";
+            this.networkMonitorToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.networkMonitorToolStripMenuItem.Text = "ARP Scanner";
             this.networkMonitorToolStripMenuItem.Click += new System.EventHandler(this.networkMonitorToolStripMenuItem_Click);
             // 
             // packetCaptureToolStripMenuItem

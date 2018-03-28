@@ -262,7 +262,7 @@ namespace FirewallMan
 
         private void networkMonitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NetworkMonitor NW = new NetworkMonitor();
+            ARPScanner NW = new ARPScanner();
             NW.Show();
         }
 
