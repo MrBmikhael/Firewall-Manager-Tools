@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirewallMan));
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.ruleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -324,7 +325,7 @@
             // packetCaptureToolStripMenuItem
             // 
             this.packetCaptureToolStripMenuItem.Name = "packetCaptureToolStripMenuItem";
-            this.packetCaptureToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.packetCaptureToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.packetCaptureToolStripMenuItem.Text = "Packet Capture";
             this.packetCaptureToolStripMenuItem.Click += new System.EventHandler(this.packetCaptureToolStripMenuItem_Click);
             // 
@@ -337,6 +338,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FirewallMan";
             this.Text = "Firewall Manager";
