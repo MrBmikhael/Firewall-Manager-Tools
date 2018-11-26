@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpPcap;
 using SharpPcap.LibPcap;
 using System.Net;
-using System.Net.NetworkInformation;
 using SharpPcap.WinPcap;
 
 namespace FirewallMan
@@ -41,11 +31,26 @@ namespace FirewallMan
             req.Timeout = new System.TimeSpan(1200000);
 
             IPAddress target = null;
-            IPAddress.TryParse("192.168.1.1", out target);
+            IPAddress.TryParse(networkText.Text, out target);
 
-            var resolvedMacAddress = req.Resolve(target);
+            int retry = 5;
+            string hostMacAddress = null;
 
-            Console.Out.WriteLine(resolvedMacAddress.ToString());
+            while (retry > 1 && hostMacAddress == null)
+            {
+                try
+                {
+                    hostMacAddress = req.Resolve(target).ToString();
+                }
+                catch { }
+                retry -= 1;
+            }
+
+            try
+            {
+                Console.Out.WriteLine(hostMacAddress.ToString());
+            }
+            catch { }
         }
     }
 }
