@@ -61,6 +61,7 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.networkMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packetCaptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wakeOnLANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewContextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -86,6 +87,7 @@
             this.listView1.ContextMenuStrip = this.listViewContextMenu;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 91);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -121,26 +123,26 @@
             this.toolStripMenuItem6,
             this.toggleDirectionToolStripMenuItem});
             this.listViewContextMenu.Name = "contextMenuStrip1";
-            this.listViewContextMenu.Size = new System.Drawing.Size(162, 70);
+            this.listViewContextMenu.Size = new System.Drawing.Size(161, 70);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.toolStripMenuItem1.Text = "Delete";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(160, 22);
             this.toolStripMenuItem6.Text = "Toggle Action";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // toggleDirectionToolStripMenuItem
             // 
             this.toggleDirectionToolStripMenuItem.Name = "toggleDirectionToolStripMenuItem";
-            this.toggleDirectionToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.toggleDirectionToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.toggleDirectionToolStripMenuItem.Text = "Toggle Direction";
             this.toggleDirectionToolStripMenuItem.Click += new System.EventHandler(this.toggleDirectionToolStripMenuItem_Click);
             // 
@@ -166,7 +168,8 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Inbound",
-            "Outbound"});
+            "Outbound",
+            "Both"});
             this.comboBox3.Location = new System.Drawing.Point(100, 19);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(88, 21);
@@ -310,24 +313,32 @@
             // 
             this.toolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.networkMonitorToolStripMenuItem,
-            this.packetCaptureToolStripMenuItem});
+            this.packetCaptureToolStripMenuItem,
+            this.wakeOnLANToolStripMenuItem});
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(47, 20);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(46, 20);
             this.toolStripMenuItem5.Text = "Tools";
             // 
             // networkMonitorToolStripMenuItem
             // 
             this.networkMonitorToolStripMenuItem.Name = "networkMonitorToolStripMenuItem";
-            this.networkMonitorToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.networkMonitorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.networkMonitorToolStripMenuItem.Text = "ARP Scanner";
             this.networkMonitorToolStripMenuItem.Click += new System.EventHandler(this.networkMonitorToolStripMenuItem_Click);
             // 
             // packetCaptureToolStripMenuItem
             // 
             this.packetCaptureToolStripMenuItem.Name = "packetCaptureToolStripMenuItem";
-            this.packetCaptureToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.packetCaptureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.packetCaptureToolStripMenuItem.Text = "Packet Capture";
             this.packetCaptureToolStripMenuItem.Click += new System.EventHandler(this.packetCaptureToolStripMenuItem_Click);
+            // 
+            // wakeOnLANToolStripMenuItem
+            // 
+            this.wakeOnLANToolStripMenuItem.Name = "wakeOnLANToolStripMenuItem";
+            this.wakeOnLANToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wakeOnLANToolStripMenuItem.Text = "Wake on LAN";
+            this.wakeOnLANToolStripMenuItem.Click += new System.EventHandler(this.wakeOnLANToolStripMenuItem_Click);
             // 
             // FirewallMan
             // 
@@ -385,6 +396,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toggleDirectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem packetCaptureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wakeOnLANToolStripMenuItem;
     }
 }
 

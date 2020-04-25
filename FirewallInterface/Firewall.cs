@@ -61,13 +61,10 @@ namespace FirewallInterface
             inboundRule.ApplicationName = appName;
 
             inboundRule.Protocol = (int)ruleProtoc;
-            //inboundRule.Protocol = Convert.ToInt16(NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_ANY);
             inboundRule.Direction = (NET_FW_RULE_DIRECTION_)ruleDir;
-            //inboundRule.Direction = NET_FW_RULE_DIRECTION_.NET_FW_RULE_DIR_OUT;
             inboundRule.Profiles = 7;
             inboundRule.Name = "_BM_FW_" + ((int)ruleDir).ToString() + ((int)ruleAction).ToString() + ((int)ruleProtoc).ToString() + "_" + appName.Substring(appName.LastIndexOf(@"\") + 1, appName.Length - appName.LastIndexOf(@"\") - 5);
             inboundRule.Action = (NET_FW_ACTION_)ruleAction;
-            //inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_BLOCK;
 
             INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwPolicy2"));
             firewallPolicy.Rules.Add(inboundRule);

@@ -59,8 +59,13 @@ namespace FirewallMan
             {
                 if (comboBox3.Text == "Inbound")
                     FW.addRule(textBox1.Text, (Firewall.RuleAction)comboBox1.SelectedIndex, Firewall.RuleDirection.Inbound, Firewall.RuleProtocol.ANY);
-                else
+                else if (comboBox3.Text == "Outbound")
                     FW.addRule(textBox1.Text, (Firewall.RuleAction)comboBox1.SelectedIndex, Firewall.RuleDirection.Outbound, Firewall.RuleProtocol.ANY);
+                else
+                {
+                    FW.addRule(textBox1.Text, (Firewall.RuleAction)comboBox1.SelectedIndex, Firewall.RuleDirection.Inbound, Firewall.RuleProtocol.ANY);
+                    FW.addRule(textBox1.Text, (Firewall.RuleAction)comboBox1.SelectedIndex, Firewall.RuleDirection.Outbound, Firewall.RuleProtocol.ANY);
+                }
             }
             catch (Exception ex)
             {
@@ -158,10 +163,6 @@ namespace FirewallMan
                         foreach (string lineStr in fileLines)
                         {
                             string[] line = lineStr.Split(';');
-                            //Console.Out.WriteLine(line[0]); // Rule Name
-                            //Console.Out.WriteLine(line[1]); // Action
-                            //Console.Out.WriteLine(line[2]); // Direction
-                            //Console.Out.WriteLine(line[3]); // Path
 
                             Firewall.RuleAction action;
                             if (line[1] == "BLOCK")
@@ -201,12 +202,6 @@ namespace FirewallMan
             {
                 foreach (string[] rule in FW.loadRules(true))
                 {
-                    //Console.Out.WriteLine("{0}{1}{2}{3}", rule);
-                    // rule[0] = Rule Name
-                    // rule[1] = Action
-                    // rule[2] = Direction
-                    // rule[3] = Application Path
-
                     try
                     {
                         if (!File.Exists(rule[3]))
@@ -228,8 +223,6 @@ namespace FirewallMan
                         else
                             FW.addRule(rule[3], Firewall.RuleAction.ALLOW, Firewall.RuleDirection.Outbound, Firewall.RuleProtocol.ANY);
                     }
-
-                    //listView1.Items.Add(new ListViewItem(rule));
                 }
                 loadRules();
             }
@@ -275,6 +268,12 @@ namespace FirewallMan
         {
             Pcap packetCap = new Pcap();
             packetCap.Show();
+        }
+
+        private void wakeOnLANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WOL wakeonLan = new WOL();
+            wakeonLan.Show();
         }
     }
 }
